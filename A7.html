@@ -1,0 +1,86 @@
+<!--
+	Create a form for Student information. Write JavaScript code to find Total, Average, Result and Grade.
+-->
+
+<html>
+	<head>
+		<title>Student Result</title>
+
+		<script type="text/javascript">
+		
+			function findResult() {
+				
+				result="";
+				grade="";
+				stuname=document.lab7.sname.value;
+				m1=parseInt(document.lab7.mark1.value);
+				m2=parseInt(document.lab7.mark2.value);
+				m3=parseInt(document.lab7.mark3.value);
+				m4=parseInt(document.lab7.mark4.value);
+				
+				Total=(m1+m2+m3+m4);
+				average=Math.round(Total/4);
+
+				if(m1<40 || m2<40 || m3<40 || m4<40) {
+					grade="F";
+					result="Fail";
+				}
+
+				else {
+
+					if(average>=80) {
+						grade="A";
+						result="Distinction";
+					}
+
+					else if(average>=60 && average<80) {
+						grade="B";
+						result="First Class";
+					}
+
+					else if(average>=50 && average<60) {
+						grade="C";
+						result="Second Class";
+					}
+
+					else if(average>=40 && average<50) {
+						grade="D";
+						result="Passed";
+					}
+
+					else {
+						grade="F";
+						result="Failed";
+					}
+				}
+
+				document.writeln("<pre>Student Name: <b>"+stuname+"</b>");
+				document.writeln("Total Marks: <b>"+Total+"</b>");
+				document.writeln("Average Marks: <b>"+average+"</b>");
+				document.writeln("Result: <b>"+result+"</b>");
+				document.writeln("Grade: <b>"+grade+"</b></pre>");
+			}
+		</script>
+	</head>
+
+	<body bgcolor=cyan>
+
+		<centre><b><h1>Student Information</h1></b></centre><br/><br/>
+		<h2>Enter the marks of the student</h2>
+		
+		<form name="lab7">
+
+			<pre><b>		
+				STUDENT NAME 		<input type="text" name="sname">
+				THEORY OF COMPUTATION 	<input type="text" name="mark1">
+				CRYPTOGRAPHY 		<input type="text" name="mark2">
+				SYSTEM PROGRAMMING 	<input type="text" name="mark3">
+				WEB PROGRAMMING 	<input type="text" name="mark4">
+			</b></pre>
+
+			<input type="button" value="Submit" onclick="findResult();"/>
+			<input type="reset" name="reset" value="Reset">
+
+		</form>
+	</body>
+</html>

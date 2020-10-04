@@ -1,0 +1,31 @@
+<!-- 
+	Create a form having number of elements (Textboxes, Radio buttons, Checkboxes, and so on).
+	Write a JavaScript code to count the number of elements in the form.
+-->
+
+<html>
+	<head>
+		<title>ELEMENT COUNT</title>	
+
+		<script type="text/javascript">
+			function count_element() {
+				window.alert("The number of elements are "+document.myform.length);
+			}
+		</script>
+	</head>
+	
+	<body bgcolor="lightgreen">
+		<form name="myform">
+			Username:<input type="text" name="user"/><br/><br/>
+			Password:<input type="PASSWORD" name="pwd"/><br/><br/>
+			Gender:<input type="radio" name="gen" value="">Male<input type="radio" name="gen" value="">Female<br/><br/>
+			Sports Details: <br/><center>
+					<input type="checkbox" name="sports" value="Hockey"/>I play Hockey<br/><br/>
+					<input type="checkbox" name="sports" value="Cricket">I play Cricket<br/><br/>
+					<input type="checkbox" name="sports" value="Basketball">I play Basketball<br/><br/></center>
+			
+			<input type="button" onclick="alert('Hello World!')" value="Click Me!"><br/><br/>
+			<input type="button" value="SEND MESSAGE" onclick="count_element()"/>
+		</form>
+	</body>
+</html>

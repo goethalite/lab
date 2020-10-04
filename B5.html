@@ -1,0 +1,33 @@
+<!--
+	A JavaScript program to find the reverse of a number.
+-->
+
+<html>
+	<head>
+		<title>Reverse</title>
+		
+		<h3 align="center" style="color:red">To find the reverse of a number</h3>
+
+		<script type="text/javascript">
+		
+			function reverse() {
+				
+				no = Number(document.getElementById("num").value);
+				temp = 0;
+				while(no>0) {
+
+					a = no % 10;
+					no = parseInt(no/10);
+					temp = temp * 10 + a;
+				}
+
+				alert("The reverse of the number is "+temp);
+			}
+		</script>
+	</head>
+
+	<body>
+		Enter any number <input id="num">
+		<button onclick="reverse()">Check</button>
+	</body>
+</html>

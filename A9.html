@@ -1,0 +1,111 @@
+<!--
+	Create a form that consists of two multiple choice lists and one single choice list.
+	(a) The first multiple choice list displays the major dishes available.
+	(b) The second multiple choice list displays the starters available.
+	(c) The single choice list displays the soft drinks available.
+-->
+
+<html>
+	<head>
+		<title>Restaurant Details</title>
+
+		<script type="text/javascript">
+
+			function findCost() {
+
+				major1=document.getElementById("major");
+				starters1=document.getElementById("starters");
+				soft1=document.getElementById("soft");
+				ItemsSelected="Item\t\t\tPrice\n------------------------------------------\n";
+				totalcost=0;
+
+				for(i=0;i<major1.options.length;i++) {
+
+					option1=major1.options[i];
+	
+					if(option1.selected==true) {
+						price=parseInt(option1.value);
+						totalcost=totalcost+price;
+						ItemsSelected=ItemsSelected+option1.text+"\t\t"+price+"\n";
+					}
+				}
+
+				for(i=0;i<starters.options.length;i++) {
+
+					option=starters.options[i];
+
+					if(option.selected==true) {
+						price=parseInt(option.value);
+						totalcost=totalcost+price;
+						ItemsSelected=ItemsSelected+option.text+"\t\t"+price+"\n";
+					}
+				}
+
+				softdrinkIndex=soft.selectedIndex;
+
+				if(softdrinkIndex>=0) {
+					selectedSoftDrink=soft.options[soft.selectedIndex].text;
+					price=parseInt(soft.options[soft.selectedIndex].value);
+					totalcost=totalcost+price;
+					//alert(ItemsSelected+selectedSoftDrink+"\t\t"+price+"\n");
+					ItemsSelected=ItemsSelected+selectedSoftDrink+"\t\t\t"+price+"\n";
+				}
+
+				//alert(ItemsSelected);
+				ItemsSelected=ItemsSelected+"\n\nTotal Cost\t\t"+totalcost;
+				document.getElementById("ordereditems").value=ItemsSelected;
+			}
+		</script>
+	</head>
+
+	<body>
+		<form name="menuForm">
+
+			<table border="10">
+
+				<tr>
+					<th colspan="2" align="centre">
+					<h2>Restaurant Menu Details</h2></th>
+				</tr>
+
+				<tr>
+					<td>Major Dishes:</td>
+					<td><select id="major" size="3" multiple="multiple">
+						<option value="100">Vegetable Pulav</option>
+						<option value="150">Hyderabadi Biryani</option>
+						<option value="50">Roti with Curry</option>
+					</select></td>
+				</tr>
+
+				<tr>
+					<td>Starters:</td>
+					<td><select id="starters" size="3" multiple="multiple">
+						<option value="80">Gobi Manchurian</option>
+						<option value="40">Veg Clear Soup</option>
+						<option value="30"><Masala Papad</option>
+					</select></td>
+				</tr>
+
+				<tr>
+					<td>Soft Drinks:</td>
+					<td><select id="soft" sixe="3" selected="selected">
+						<option value="20">Pepsi</option>
+						<option value="20">Coke</option>
+						<option value="30">Lime Soda</option>
+					</select></td>
+				</tr>
+
+				<tr>
+					<td colspan="2" align="centre">
+						<textarea id="ordereditems" rows="10" cols="40"></textarea>
+					</td>
+				</tr>
+
+				<tr>
+					<td><input type="button" value="Final Total Cost" onclick="findCost();"/></td>
+					<td><input type="reset" value="Clear"/></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

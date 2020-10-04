@@ -1,0 +1,45 @@
+<!--
+	Write a JavaScript code block using arrays and generate the current date in words (this should include the day, month and year).
+-->
+
+<html>
+	<head>
+		<title>Current Date</title>
+	</head>
+
+	<body bgcolor=cyan>
+
+		<centre><h1>Displaying the Current Date</h1></centre>
+
+		<script type="text/javascript">
+
+			var d_names=new Array ("Sunday","Monday","Tuesday","Wednesday","Thurday","Friday","Saturday");
+			var m_names=new Array ("January","February","March","April","May","June","July","August","September","October","November","December");
+			var d=new Date();
+			var curr_day=d.getDay();
+			var curr_date=d.getDate();
+			var curr_month=d.getMonth();
+			var curr_year=d.getFullYear();
+			var sup=""
+
+			if(curr_date==1 || curr_date==21 || curr_date==31) {
+				sup="st";
+			}
+
+			else if(curr_date==2 || curr_date==22) {
+				sup="nd";
+			}
+
+			else if(curr_date==3 || curr_date==23) {
+				sup="rd";
+			}
+
+			else {
+				sup="th";
+			}
+			
+			document.write("<centre><h2>"+d_names[curr_day]+" "+curr_date+"<SUP>"+sup+"</SUP> "+m_names[curr_month]+" "+curr_year+"</h2></centre>");
+		
+		</script>
+	</body>
+</html>

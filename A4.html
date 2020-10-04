@@ -1,0 +1,100 @@
+<!--
+	Create a page with dynamic effects. Write a code to include layers and basic animation.
+-->
+
+<html>
+	<head>
+		<title>JavaScript Button Example</title>
+
+		<script type="text/javascript">
+			
+			function setVisible(setting) {
+				var myElement=document.getElementById("layer1");
+
+				if(setting)
+					myElement.style.visibility="visible";
+
+				else
+					myElement.style.visibility="hidden";
+			}
+
+			var x=20;
+
+			function moveRight() {
+				var layerElement=document.getElementById("layer2");
+				x+=20;
+				layerElement.style.left=x;
+			}
+
+			function moveLeft() {
+				var layerElement=document.getElementById("layer3");
+				x-=20;
+				layerElement.style.left=x;
+			}
+
+			function moveImage(layer) {
+				var top=window.prompt("Enter the Top position");
+				var left=window.prompt("Enter left value");
+				document.getElementById(layer).style.top=top+'px';
+				document.getElementById(layer).style.left=left+'px';
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="layer4"><img src=".\pic.jpg" onclick="moveImage('layer4')" alt="My Image" width=500px height=500px/></div>
+
+		<style type="text/css">
+
+			#layer1 {
+				background-color:yellow;
+				height:90px;
+				width:90px;
+				left:645px;
+				top:756px;
+				visibility: hidden;
+			}
+
+			#layer2 {
+				background-color: grey;
+				position: absolute;
+				height:90px;
+				width:90px;
+				left:0px;
+				top:100px;
+			}
+
+			#layer3 {
+				background-color: red;
+				position: absolute;
+				height:90px;
+				width:90px;
+				left:10px;
+				top:100px;
+			}
+
+
+			#layer4 {
+				position:absolute;
+				top:40px;
+				left:500px;
+			}
+
+		</style>
+
+		<p id="layer1">This is layer 1</p><br/><br/><br/>
+		<p id="layer2">This is layer 2</p><br/><br/><br/>
+		<p id="layer3">This is layer 3</p><br/><br/><br/>
+
+		<form action="" name="orderForm">
+
+			<input type="BUTTON" value="Click to hide" onClick="setVisible(false)" />
+			<input type="BUTTON" value="Click to show" onClick="setVisible(true)" />
+
+			<input type="BUTTON" value="Move Left" onClick="moveLeft()" />
+			<input type="BUTTON" value="Move Right" onClick="moveRight()" />
+
+		</form>
+	</body>
+</html>
+			

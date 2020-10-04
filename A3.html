@@ -1,0 +1,34 @@
+<!--
+	Develop a HTML form which accepts any Mathematical expression. Write JavaScript code to evaluate the expression and display the result.
+-->
+
+<html>
+	<head>
+		<title>Mathematical Expression</title>
+
+		<script type="text/javascript">
+
+			function calc() {
+				document.lab3.answer.value=eval(document.lab3.math.value)
+			}
+		
+		</script>
+	</head>
+
+	<body bgcolor=cyan>
+		<centre><h1>Solve the Mathematical Expression</h1></centre>
+
+		<form name="lab3">
+
+			<pre>
+				<b>Enter a Mathematical expression in the first text box and then use the calculate button to get the answer.</b>
+				<input type="text" size="20" name="math">
+				<input type="button" name="btn1" value="Calculate Me" onclick="calc()">
+				<b>Answer: </b><input type="text" size="20" name="answer">
+				<input type="reset" name="reset" value="Reset">
+			</pre>
+		</form>
+	</body>
+</html>
+
+		

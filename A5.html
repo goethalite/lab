@@ -1,0 +1,39 @@
+<!--
+	Write a JavaScript code to find the sum of N natural numbers using user-defined function.
+-->
+
+<html>
+	<head>
+		<title>Sum of n Natural numbers</title>
+	</head>
+
+	<body bgcolor=cyan>
+
+		<centre><h1>Find the Sum of n Natural numbers.</h1></centre>
+
+		<script type="text/javascript">
+		
+			var number, n, s=0;
+			number=window.prompt("Enter the range to find the sum");
+			n=parseInt(number);
+			
+			if(n<=0) {
+				alert("Enter a positive number");
+			}
+
+			else {
+
+				function sum(n) {
+
+					for(var i=0;i<=n;i++) {
+						s=s+i;
+
+					}
+				}
+				
+				sum(n);
+				document.write("<h2><centre>Sum of "+n+" Natural numbers is<br><i> "+s+"</i></centre></h2>");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!--
+	Create a form for Employee information. Write a Javascript code to find DA, HRA, PF, TAX, Gross Pay, Deduction and Net Pay.
+-->
+
+<html>
+	<head>
+		<title>Employee Salary</title>
+
+		<script type="text/javascript">
+
+			function findSalary() {
+
+				empname=document.lab8.ename.value;
+				edept=document.lab8.dept.value;
+				basicpay=parseInt(document.lab8.basic.value);
+
+				da = basicpay * 0.5;
+				hra = basicpay * 0.15;
+				grosspay = basicpay + da + hra;
+				pf = grosspay * 0.12;
+				tax = grosspay * 0.1;
+				deductions = pf + tax;
+				netpay = grosspay - deductions;
+
+				document.writeln("<pre>Employee Name : <b>"+empname+"</b>");
+				document.writeln("Basic Pay : <b>"+basicpay+"</b>");
+				document.writeln("Gross Pay : <b>"+grosspay+"</b>");
+				document.writeln("Deductions : <b>"+deductions+"</b>");
+				document.writeln("Net Pay : <b>"+netpay+"</b></pre>");
+			}
+		</script>
+	</head>
+
+	<body bgcolor=cyan>
+
+		<centre><b><h1>Employee's Salary Information</h1></b></centre><br/><br/>
+
+		<form name="lab8">
+
+			<h2>Enter the name and basic pay of Employee</h2>
+
+			<pre>
+				EMPLOYEE NAME	<input type="text" name="ename">
+				DEPARTMENT	<input type="text" name="dept">
+				BASIC PAY	<input type="text" name="basic">
+			</pre>
+
+			<input type="button" value="Calculate Net Salary" onclick="findSalary();"/>
+			<input type="reset" name="reset" value="Reset">
+
+		</form>
+	</body>
+<html>
+				

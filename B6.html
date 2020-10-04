@@ -1,0 +1,27 @@
+<!--
+	A JavaScript program to find the factorial of a number using recursion.
+-->
+
+<html>
+	<head>
+		<title>Factorial</title>
+
+		<script type="text/javascript">
+
+			n = parseInt(window.prompt("Enter a number"));
+			result = fact(n);
+			window.alert("Factorial of the number is "+result);
+			
+			function fact(n) {
+
+				if(n==0) {
+					return 1;
+				}
+
+				else {
+					return n * fact(n-1);
+				}
+			}
+		</script>
+	</head>
+</html>

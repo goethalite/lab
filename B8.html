@@ -1,0 +1,31 @@
+<!--
+	A JavaScript program to count the number of vowels in a string.
+-->
+
+<html>
+	<head>
+		<title>Vowels</title>
+
+		<script type="text/javascript">
+		
+			count = 0;
+
+			function countVowels(name) {
+
+				for(i=0;i<name.length;i++) {
+				
+					if(name[i]=="a" || name[i]=="e" || name[i]=="i" || name[i]=="o" || name[i]=="u" || name[i]=="A"  || name[i]=="E"  || name[i]=="I"  || name[i]=="O"  || name[i]=="U") {
+						count = count + 1;
+					}
+				}
+
+				document.write("Total number of vowels in the string is "+count);	
+			}
+
+
+			var myName = prompt("Enter a string");
+			countVowels(myName);
+
+		</script>
+	</head>
+</html> 

@@ -1,0 +1,41 @@
+<!--
+	A JavaScript program to find whether a number is palindrome or not.
+-->
+
+<html>
+	<head>
+		<title>Palindrome</title>
+
+		<script type="text/javascript">
+
+			function palin() {
+			
+				no = Number(document.getElementById("num").value);
+				b = no;
+				temp = 0;
+				
+				while(no>0) {
+
+					a = no % 10;
+					no = parseInt(no/10);
+					temp = temp * 10 + a;
+				}
+
+				if(temp==b) {
+					alert("Palindrome Number");
+				}
+
+				else {
+					alert("Not Palindrome Number");
+				}
+
+			}
+
+		</script>
+	</head>
+
+	<body>
+		Enter a Number <input id="num">
+		<button onclick="palin()">Check</button>
+	</body>
+</html>

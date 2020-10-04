@@ -1,0 +1,37 @@
+<!--
+	A JavaScript program to convert lowercase text to uppercase and vice versa.
+-->
+
+<html>
+	<head>
+		<title>Case Change</title>
+
+		<script type="text/javascript">
+
+			function uppercase() {
+				document.myForm.TxtName.value = document.myForm.TxtName.value.toUpperCase();
+			}
+
+			function lowercase() {
+				document.myForm.TxtName.value = document.myForm.TxtName.value.toLowerCase();
+			}
+
+		</script>
+	</head>
+
+	<body>
+
+		<h1>To change the case of the text</h1>
+
+		<form name="myForm">
+
+			<pre>
+				Enter a string <input type="text" name="TxtName">
+			</pre>
+
+			<input type="button" value="Upper Case" onclick="uppercase();"/>
+			<input type="button" value="Lower Case" onclick="lowercase();"/>
+
+		</form>
+	</body>
+</html>

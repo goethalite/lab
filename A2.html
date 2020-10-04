@@ -1,0 +1,41 @@
+<!--
+    Create a HTML form that has number of Textboxes. When the form runs in the Browser fill the textboxes with data.
+    Write a JavaScript code that verifies that all textboxes have been filled.
+    If a textbox has been left empty, pop up an alert indicating which textbox has been left empty.
+-->
+
+<html>
+    <head>
+        <title>Form Validation</title>
+        <script type="text/javascript">
+            function ValidateContactForm() {
+                var Name=document.lab2.Name;
+                var x=document.forms["lab2"]["Name"].value;
+                var regex=/^[a-zA-Z]+$/;
+                if(!x.match(regex)||(Name.value=="")) {
+                    alert("Must input string for name");
+                    return false;
+                }
+                var Mob=document.lab2.Mob;
+                var y=document.forms["lab2"]["Mob"].value;
+                var Num=/^[0-9]/;
+                if(!y.match(Num)||((Mob.value.length)!=10)||(Mob.value=="")) {
+                    alert("Mobile number must be 10 digits");
+                    return true;
+                }
+                alert("Form submitted successfully");
+            }
+        </script>
+    </head>
+    <body bgcolor="cyan">
+        <centre><h1>Validation of Form</h1></centre>
+        <form method="POST" action="" name="lab2" onsubmit="return ValidateContactForm();">
+            <pre>
+                Name : <input type="text" size="25" name="Name" value=""/>
+                Mobile Number : <input type="number" size="10" name="Mob" value=""/>
+            </pre>
+            <input type="button" value="Submit" onclick="ValidateContactForm();"/>
+            <input type="reset" name="reset" value="Reset">
+        </form>    
+    </body>
+</html>
